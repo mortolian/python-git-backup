@@ -1,0 +1,21 @@
+[
+  {
+    "vendor": "github",
+    "github_username":"",
+    "github_organization": "",
+    "github_token":"",
+    "backup_directory": "/var/gitbackups"
+  },
+  {
+    "vendor": "bitbucket",
+    "bitbucket_username" : "",
+    "bitbucket_app_password": "",
+    "backup_directory": "/var/gitbackups"
+  },
+  {
+    "vendor": "single",
+    "name": "single-backup-repo",
+    "git_ssh_url": "git://github.com/username/single-backup-repo.git",
+    "backup_directory": "/var/gitbackups"
+  }
+]
