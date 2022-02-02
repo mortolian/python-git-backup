@@ -10,6 +10,7 @@ if __name__ == "__main__":
     json_backup_config = GetJsonConfig(os.path.dirname(os.path.realpath(__file__)) + "/config.json").get_content()
 
     backup_directory = json_backup_config['backup_directory']
+    days_to_keep_backups = json_backup_config['days_to_keep_backups']
 
     for backup_config in json_backup_config['backup_jobs']:
         if backup_config['vendor'] == 'bitbucket':
@@ -40,5 +41,5 @@ if __name__ == "__main__":
         if backup:
             backup.backup()
             backup.compress()
-            backup.rotate(3)
+            backup.rotate(days_to_keep_backups)
             backup = None

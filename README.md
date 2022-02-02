@@ -46,41 +46,22 @@ Example of cron:
 
 ```
 
+### Days backups are kept
+You can configure the number of days backups are kept in the `config.json` by setting `days_to_keep_backups`.
+Keep in mind that this will work on time in seconds from the time the file was created.
+
+There is no backup file rotation at the moment (daily, monthly, weekly.).
+
 ## Requirements
 - Docker 20.x.x
 - Python 3.9.9
 - Python Lib : requests [Documentation](https://docs.python-requests.org/en/latest/#)
 - Python Lib : shutil, os
 
-## Backup Config
-
-```json
-[
-  {
-    "vendor": "github",
-    "github_username":"",
-    "github_organization": "",
-    "github_token":"",
-    "backup_directory": "/var/gitbackups"
-  },
-  {
-    "vendor": "bitbucket",
-    "bitbucket_username" : "",
-    "bitbucket_app_password": "",
-    "backup_directory": "/var/gitbackups"
-  },
-  {
-    "vendor": "single",
-    "name": "single-backup-repo",
-    "git_ssh_url": "git://github.com/username/single-backup-repo.git",
-    "backup_directory": "/var/gitbackups"
-  }
-]
-```
-
 ## Roadmap
 - Create an alert hook of some kind when a backup fails, alerts to a chat application or something.
 - Dockerise the application.
+- Make the 
 
 ## Contribution
 Anyone is welcome to fork the project and evolve it or can create a pull request with improvements.
@@ -94,3 +75,8 @@ Anyone is welcome to fork the project and evolve it or can create a pull request
 - Documentation: https://developer.atlassian.com/cloud/bitbucket/rest/intro/
 
 ### GitHub Documentation and Useful Links
+
+- Documentation: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
+- Documentation: https://docs.github.com/en/rest/overview/other-authentication-methods#basic-authentication
+- Documentation: https://docs.github.com/en/rest
+- Create a token: https://github.com/settings/developers
